@@ -1,9 +1,14 @@
-{% extends "base.html" %}
+<!DOCTYPE html>
+<html lang="en">
 
-{% block title %} Reddit {% endblock title %}
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Login</title>
+</head>
 
-{% block content %}
-
+<body>
+   <h1>Login</h1>
    <a href="{% url 'user_app:sign_up' %}">Sign Up</a>
    <hr />
    <form action="{% url 'user_app:login' %}" method="POST">
@@ -16,6 +21,7 @@
    {% if error %}
    {{ error }}
    {% endif %}
-   <a href="{% url 'user_app:request_password_reset' %}">Request Password Reset</a>
+   <a href="{% url 'user_app:password_reset' %}">Request Password Reset</a>
+</body>
 
-{% endblock content %}
+</html>

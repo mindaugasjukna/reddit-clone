@@ -5,6 +5,7 @@
 {% block content %}
 
 <div>
+<p>Welcome {{ user }} - <a href="{% url 'user_app:logout' %}">Log out</a> - <a href="{% url 'user_app:delete_account' %}">Delete Account</a></p>
       {% for post in posts  %}
         <li>
             <form action="{% url 'reddit_app:change_status' %}" method="POST">
