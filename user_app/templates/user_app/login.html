@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %} Reddit {% endblock title %}
+
+{% block content %}
+
+   <a href="{% url 'user_app:sign_up' %}">Sign Up</a>
+   <hr />
+   <form action="{% url 'user_app:login' %}" method="POST">
+      {% csrf_token %}
+      <input type="text" name="user" placeholder="User Name">
+      <input type="password" name="password" placeholder="Password">
+      <button>Login</button>
+   </form>
+   <hr />
+   {% if error %}
+   {{ error }}
+   {% endif %}
+   <a href="{% url 'user_app:request_password_reset' %}">Request Password Reset</a>
+
+{% endblock content %}
