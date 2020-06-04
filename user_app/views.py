@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login as dj_login, logout as dj_logout
 from django.http import HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
+from . models import PasswordResetRequest
 
 
 def login(request):
