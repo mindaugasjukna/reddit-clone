@@ -6,16 +6,7 @@
         <title>{% block title %} {% endblock title %} </title>
     </head>
     <body>
-        <header>
         <h1>Reddit Clone</h1>
-            <nav>
-                <ul>
-                    <li>
-                        <a href="{% url 'reddit_app:index' %}">Home</a>
-                    </li>
-                </ul>
-            </nav>
-        </header>
         <main>
             {% block content %}
             <!-- Main content inserted here -->

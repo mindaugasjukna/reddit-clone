@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'reddit_app',
     'user_app',
     'user_profile_app',
+    'languagefilter_middleware.apps.LanguagefilterMiddlewareConfig',
 ]
 
 REST_FRAMEWORK = {
@@ -56,19 +57,10 @@ REST_FRAMEWORK = {
     ],
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework.authentication.TokenAuthentication',
-        'rest_framework.authentication.SessionAuthentication',
-    ]
-}
-
-IPFILTER_MIDDLEWARE = {
-    'ALLOWED_IP_ADDRESSES': [
-        '127.0.0.1',
-        '12345678'
     ]
 }
 
 MIDDLEWARE = [
-    'ipfilter_middleware.middleware.IPFilterMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -76,6 +68,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'languagefilter_middleware.middleware.JSONTranslationMiddleware',
 ]
 
 ROOT_URLCONF = 'reddit_project.urls'
